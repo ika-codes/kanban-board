@@ -87,90 +87,94 @@ body {
 			background-color: #376461;
 			border-color: #376461;
 		}
+	}	
+}
+
+.column-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	
+}
+
+.column {
+	flex: 1;
+	min-width: 300px;
+	background-color: #fff;
+	min-height: 200px;
+	margin: 20px;
+	border: 2px solid $border;
+	border-radius: 20px;
+	padding: 10px;
+	button {
+		display: inline-block;
+		padding: 3px 8px;
+		margin: 0 10px 10px 10px;
+		font-size: 10px;
+		font-weight: 500;
+		cursor: pointer;
+		border: 2px solid;
+		border-radius: 5px;
+		color: #fff;
+		transition: .5s;
 	}
-	.column-container {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: flex-start;
-		flex-wrap: wrap;
-		.column {
-			flex: 1;
-			min-width: 300px;
-			background-color: #fff;
-			min-height: 200px;
-			margin: 20px;
-			border: 2px solid $border;
-			border-radius: 20px;
-			padding: 10px;
-			.column-title {
-				font-size: 18px;
-				color: $text-color;
-				padding-bottom: 10px;
-			}
-			.column-card-list {
-				min-height: 150px;
-				.card {
-					text-align: left;
-					@extend %clearfix;
-					button {
-						display: inline-block;
-						float: left;
-						padding: 3px 8px;
-						margin: 0 10px 10px 10px;
-						font-size: 10px;
-						font-weight: 500;
-						cursor: pointer;
-						border: 1px solid;
-						border-radius: 5px;
-						border-color: $delete;
-						color: #fff;
-						background-color: $delete;
-						transition: .5s;
-						&:hover {
-							background-color: #712E2A;
-							border-color: #712E2A;
-						}
-					}
-					p {
-						display: inline-block;
-						line-height: 20px;
-						font-size: 14px;
-					}
-				}
-			}
-			button {
-				display: inline-block;
-				padding: 3px 8px;
-				margin: 0 10px 10px 10px;
-				font-size: 10px;
-				font-weight: 500;
-				cursor: pointer;
-				border: 2px solid;
-				border-radius: 5px;
-				color: #fff;
-				transition: .5s;
-			}
-			button.btn-delete {
-				border-color: $delete;
-				background-color: $delete;
-				&:hover {
-					background-color: #712E2A;
-					border-color: #712E2A;
-				}
-			}
-			button.add-card {
-				border-color: $success;
-				background-color: $success;
-				&:hover {
-					background-color: #376461;
-					border-color: #376461;
-				}
-			}
+	button.btn-delete {
+		border-color: $delete;
+		background-color: $delete;
+		&:hover {
+			background-color: #712E2A;
+			border-color: #712E2A;
 		}
 	}
-	
+	button.add-card {
+		border-color: $success;
+		background-color: $success;
+		&:hover {
+			background-color: #376461;
+			border-color: #376461;
+		}
+	}
+}
+
+.column-title {
+	font-size: 18px;
+	color: $text-color;
+	padding-bottom: 10px;
+}
+
+.column-card-list {
+	min-height: 150px;
+	.card {
+		text-align: left;
+		@extend %clearfix;
+		button {
+			display: inline-block;
+			float: left;
+			padding: 3px 8px;
+			margin: 0 10px 10px 10px;
+			font-size: 10px;
+			font-weight: 500;
+			cursor: pointer;
+			border: 1px solid;
+			border-radius: 5px;
+			border-color: $delete;
+			color: #fff;
+			background-color: $delete;
+			transition: .5s;
+			&:hover {
+				background-color: #712E2A;
+				border-color: #712E2A;
+			}
+		}
+		p {
+			display: inline-block;
+			line-height: 20px;
+			font-size: 14px;
+		}
+	}
 }
 
 .card-placeholder {
