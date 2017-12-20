@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,700,900&subset=latin-ext");
+.column-card-list .card:before, .column-card-list .card:after {
+  content: " ";
+  display: table; }
+.column-card-list .card:after {
+  clear: both; }
+
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1;
+  overflow-x: hidden; }
+
+ul, ol {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background-color: #FFEAC9; }
+
+.board {
+  width: 90%;
+  margin: 60px auto;
+  text-align: center; }
+  .board h1 {
+    font-size: 48px;
+    font-weight: 500;
+    color: #46433A; }
+  .board button.create-column {
+    padding: 10px 20px;
+    margin: 20px 5px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: #64B6B1;
+    color: #fff;
+    background-color: #64B6B1;
+    transition: .5s; }
+    .board button.create-column:hover {
+      background-color: #376461;
+      border-color: #376461; }
+
+.column-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.column {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 300px;
+  background-color: #fff;
+  min-height: 200px;
+  margin: 20px;
+  border: 2px solid #DED4B9;
+  border-radius: 20px;
+  padding: 10px; }
+  .column button {
+    display: inline-block;
+    padding: 3px 8px;
+    margin: 0 10px 10px 10px;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 5px;
+    color: #fff;
+    transition: .5s; }
+  .column button.btn-delete {
+    border-color: #CE534D;
+    background-color: #CE534D; }
+    .column button.btn-delete:hover {
+      background-color: #712E2A;
+      border-color: #712E2A; }
+  .column button.add-card {
+    border-color: #64B6B1;
+    background-color: #64B6B1; }
+    .column button.add-card:hover {
+      background-color: #376461;
+      border-color: #376461; }
+
+.column-title {
+  font-size: 18px;
+  color: #46433A;
+  padding-bottom: 10px; }
+
+.column-card-list {
+  min-height: 150px; }
+  .column-card-list .card {
+    text-align: left; }
+    .column-card-list .card button {
+      display: inline-block;
+      float: left;
+      padding: 3px 8px;
+      margin: 0 10px 10px 10px;
+      font-size: 10px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid;
+      border-radius: 5px;
+      border-color: #CE534D;
+      color: #fff;
+      background-color: #CE534D;
+      transition: .5s; }
+      .column-card-list .card button:hover {
+        background-color: #712E2A;
+        border-color: #712E2A; }
+    .column-card-list .card p {
+      display: inline-block;
+      line-height: 20px;
+      font-size: 14px; }
+
+.card-placeholder {
+  border: 2px dotted #DED4B9;
+  height: 40px; }
