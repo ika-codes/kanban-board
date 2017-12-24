@@ -9,12 +9,17 @@ function Column(id, name) {
 		var $column = $('<div>').addClass('column');
 		var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
 		var $columnCardList = $('<ul>').addClass('column-card-list');
+		var $columnEdit = $('<button>').addClass('btn-edit').text('Edit');
 		var $columnDelete = $('<button>').addClass('btn-delete').text('x');
 		var $columnAddCard = $('<button>').addClass('add-card').text('Add a card');
 
 		$columnDelete.on('click', function() {
 			self.deleteColumn();
 		});
+
+		$columnEdit.click(function() {
+            self.editColumn();
+        });
 
 		$columnAddCard.on('click', function() {
 			var cardName = prompt("Enter the name of the card");
@@ -34,6 +39,7 @@ function Column(id, name) {
 		});
 
 		$column.append($columnTitle)
+			.append($columnEdit)
 			.append($columnDelete)
 			.append($columnAddCard)
 			.append($columnCardList);
@@ -56,5 +62,24 @@ Column.prototype = {
 				self.$element.remove();
 			}
 		});
+	},
+
+	editColumn: function() {
+		var self = this;
+		var newName = prompt('Edit your column:', self.name);
+		event.preventDefault();
+		if (newName != self.name) {
+			$.ajax({
+				url: baseUrl + '/column/' + self.id,
+				method: 'PUT',
+				data: {
+					name: newName,
+				},
+    			success: function(response) {
+					self.$element.children('.column-title').text(newName);
+                    self.name = newName;
+				}
+			});
+		}
 	}
 };
