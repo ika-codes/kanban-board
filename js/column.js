@@ -9,9 +9,9 @@ function Column(id, name) {
 		var $column = $('<div>').addClass('column');
 		var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
 		var $columnCardList = $('<ul>').addClass('column-card-list');
-		var $columnEdit = $('<button>').addClass('btn-edit').text('Edit');
-		var $columnDelete = $('<button>').addClass('btn-delete').text('x');
-		var $columnAddCard = $('<button>').addClass('add-card').text('Add a card');
+		var $columnEdit = $('<button>').addClass('btn-col-edit').html('<i class="fa fa-pencil" aria-hidden="true"></i>');
+		var $columnDelete = $('<button>').addClass('btn-col-delete').html('<i class="fa fa-trash" aria-hidden="true"></i>');
+		var $columnAddCard = $('<button>').addClass('add-card').text('+');
 
 		$columnDelete.on('click', function() {
 			self.deleteColumn();
@@ -39,8 +39,8 @@ function Column(id, name) {
 		});
 
 		$column.append($columnTitle)
-			.append($columnEdit)
 			.append($columnDelete)
+			.append($columnEdit)
 			.append($columnAddCard)
 			.append($columnCardList);
 

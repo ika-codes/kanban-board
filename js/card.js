@@ -8,8 +8,8 @@ function Card(id, name) {
 	function createCard() {
 		var $card = $('<li>').addClass('card');
 		var $cardDescription = $('<p>').addClass('card-description').text(self.name);
-		var $cardDelete = $('<button>').addClass('btn-delete').text('x');
-		var $cardEdit = $('<button>').addClass('btn-edit').text('Edit');
+		var $cardDelete = $('<button>').addClass('btn-delete').html('<i class="fa fa-trash" aria-hidden="true"></i>');
+		var $cardEdit = $('<button>').addClass('btn-edit').html('<i class="fa fa-pencil" aria-hidden="true"></i>');
 
 		$cardDelete.on('click', function() {
 			self.removeCard();
@@ -48,7 +48,7 @@ Card.prototype = {
 			data: {
 				id: self.id,
 				name: self.name,
-				bootcamp_kanban_column_id: self.id
+				bootcamp_kanban_column_id: self.$element.parent().id
 			},
 			success: function(response) {
 				$cardDescription.text(self.name);
