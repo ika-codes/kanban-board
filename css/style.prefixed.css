@@ -38,34 +38,48 @@ table {
   border-spacing: 0; }
 
 body {
-  background-color: #FFEAC9; }
+  background-color: #0E0C31; }
 
 .board {
-  width: 90%;
-  margin: 60px auto;
   text-align: center; }
-  .board h1 {
+
+.header {
+  margin: 0 0 60px;
+  padding: 0;
+  background-color: #FBFCF6;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .header h1 {
     font-size: 48px;
     font-weight: 500;
-    color: #46433A; }
-  .board button.create-column {
-    padding: 10px 20px;
+    color: #0E0C31; }
+  .header button.create-column {
+    padding: 10px 30px;
     margin: 20px 5px;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     border: 2px solid;
     border-radius: 5px;
-    border-color: #64B6B1;
+    border-color: #578E8B;
     color: #fff;
-    background-color: #64B6B1;
-    transition: .5s; }
-    .board button.create-column:hover {
+    background-color: #578E8B;
+    transition: .5s;
+    float: right; }
+    .header button.create-column:hover {
       background-color: #376461;
       border-color: #376461; }
 
 .column-container {
-  width: 100%;
+  width: 90%;
+  margin: 0 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,67 +101,100 @@ body {
       -ms-flex: 1;
           flex: 1;
   min-width: 300px;
-  background-color: #fff;
-  min-height: 200px;
+  background-color: #FBFCF6;
+  min-height: 150px;
   margin: 20px;
-  border: 2px solid #DED4B9;
-  border-radius: 20px;
-  padding: 10px; }
+  padding-bottom: 20px;
+  position: relative; }
   .column button {
     display: inline-block;
     padding: 3px 8px;
-    margin: 0 10px 10px 10px;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     border: 2px solid;
-    border-radius: 5px;
     color: #fff;
     transition: .5s; }
-  .column button.btn-delete {
-    border-color: #CE534D;
-    background-color: #CE534D; }
-    .column button.btn-delete:hover {
+  .column button.btn-col-delete {
+    position: absolute;
+    right: 36px;
+    top: 0;
+    margin: 5px;
+    border-color: #FF626E;
+    background-color: #FF626E; }
+    .column button.btn-col-delete:hover {
       background-color: #712E2A;
       border-color: #712E2A; }
+  .column button.btn-col-edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 5px;
+    border-color: #9BBABF;
+    background-color: #9BBABF; }
+    .column button.btn-col-edit:hover {
+      background-color: #719CA6;
+      border-color: #719CA6; }
   .column button.add-card {
-    border-color: #64B6B1;
-    background-color: #64B6B1; }
+    border-radius: 50%;
+    border-color: #578E8B;
+    background-color: #578E8B;
+    font-size: 22px;
+    line-height: 28px;
+    padding: 0 8px;
+    margin: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0; }
     .column button.add-card:hover {
       background-color: #376461;
       border-color: #376461; }
 
 .column-title {
   font-size: 18px;
-  color: #46433A;
-  padding-bottom: 10px; }
+  color: #0E0C31;
+  background-color: #FFDFCA;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  padding: 10px;
+  margin-bottom: 20px; }
 
 .column-card-list {
   min-height: 150px; }
   .column-card-list .card {
-    text-align: left; }
+    text-align: left;
+    margin: 0 0 10px 10px; }
     .column-card-list .card button {
       display: inline-block;
       float: left;
-      padding: 3px 8px;
-      margin: 0 10px 10px 10px;
+      padding: 3px 6px;
+      margin-right: 3px;
       font-size: 10px;
-      font-weight: 500;
       cursor: pointer;
       border: 1px solid;
-      border-radius: 5px;
-      border-color: #CE534D;
       color: #fff;
-      background-color: #CE534D;
       transition: .5s; }
-      .column-card-list .card button:hover {
+    .column-card-list .card button.btn-edit {
+      border-color: #9BBABF;
+      background-color: #9BBABF; }
+      .column-card-list .card button.btn-edit:hover {
+        background-color: #719CA6;
+        border-color: #719CA6; }
+    .column-card-list .card button.btn-delete {
+      border-color: #FF626E;
+      background-color: #FF626E; }
+      .column-card-list .card button.btn-delete:hover {
         background-color: #712E2A;
         border-color: #712E2A; }
     .column-card-list .card p {
       display: inline-block;
       line-height: 20px;
-      font-size: 14px; }
+      font-size: 14px;
+      margin-left: 7px; }
 
 .card-placeholder {
-  border: 2px dotted #DED4B9;
-  height: 40px; }
+  border: 2px dotted #0E0C31;
+  height: 40px;
+  margin: 0 10px; }
+
+/*# sourceMappingURL=style.prefixed.css.map */

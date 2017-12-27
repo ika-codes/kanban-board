@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,700,900&subset=latin-ext');
 
 $fonts: 'Lato', sans-serif;
-$bg-color: #FFEAC9;
-$success: #64B6B1;
-$delete: #CE534D;
-$text-color: #46433A;
-$border: #DED4B9;
+$bg-color: #0E0C31;
+$success: #578E8B;
+$delete: #FF626E;
+$bright: #FBFCF6;
+$cream: #FFDFCA;
 
 %clearfix {
     &:before, 
@@ -63,16 +63,24 @@ body {
 }
 
 .board {
-	width: 90%;
-	margin: 60px auto;
 	text-align: center;
+}
+
+.header {
+	margin: 0 0 60px;
+	padding: 0;
+	background-color: $bright;
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 	h1 {
 		font-size: 48px;
 		font-weight: 500;
-		color: $text-color;
+		color: $bg-color;
 	}
 	button.create-column {
-		padding: 10px 20px;
+		padding: 10px 30px;
 		margin: 20px 5px;
 		font-size: 14px;
 		font-weight: 500;
@@ -83,6 +91,7 @@ body {
 		color: #fff;
 		background-color: $success;
 		transition: .5s;
+		float: right;
 		&:hover {
 			background-color: #376461;
 			border-color: #376461;
@@ -91,37 +100,39 @@ body {
 }
 
 .column-container {
-	width: 100%;
+	width: 90%;
+	margin: 0 5%;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: flex-start;
 	flex-wrap: wrap;
-	
 }
 
 .column {
 	flex: 1;
 	min-width: 300px;
-	background-color: #fff;
-	min-height: 200px;
+	background-color: $bright;
+	min-height: 150px;
 	margin: 20px;
-	border: 2px solid $border;
-	border-radius: 20px;
-	padding: 10px;
+	padding-bottom: 20px;
+	position: relative;
 	button {
 		display: inline-block;
 		padding: 3px 8px;
-		margin: 0 10px 10px 10px;
-		font-size: 10px;
+		font-size: 14px;
 		font-weight: 500;
 		cursor: pointer;
 		border: 2px solid;
-		border-radius: 5px;
 		color: #fff;
 		transition: .5s;
 	}
-	button.btn-delete {
+
+	button.btn-col-delete {
+		position: absolute;
+		right: 36px;
+		top: 0;
+		margin: 5px;
 		border-color: $delete;
 		background-color: $delete;
 		&:hover {
@@ -129,9 +140,31 @@ body {
 			border-color: #712E2A;
 		}
 	}
+
+	button.btn-col-edit {
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin: 5px;
+		border-color: #9BBABF;
+		background-color: #9BBABF;
+		&:hover {
+			background-color: #719CA6;
+			border-color: #719CA6;
+		}
+	}
+
 	button.add-card {
+		border-radius: 50%;
 		border-color: $success;
 		background-color: $success;
+		font-size: 22px;
+		line-height: 28px;
+		padding: 0 8px;
+		margin: 20px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
 		&:hover {
 			background-color: #376461;
 			border-color: #376461;
@@ -141,29 +174,42 @@ body {
 
 .column-title {
 	font-size: 18px;
-	color: $text-color;
+	color: $bg-color;
+	background-color: $cream;
 	padding-bottom: 10px;
+	text-transform: uppercase;
+	padding: 10px;
+	margin-bottom: 20px;
 }
 
 .column-card-list {
 	min-height: 150px;
 	.card {
 		text-align: left;
+		margin: 0 0 10px 10px;
 		@extend %clearfix;
 		button {
 			display: inline-block;
 			float: left;
-			padding: 3px 8px;
-			margin: 0 10px 10px 10px;
+			padding: 3px 6px;
+			margin-right: 3px;
 			font-size: 10px;
-			font-weight: 500;
 			cursor: pointer;
 			border: 1px solid;
-			border-radius: 5px;
-			border-color: $delete;
 			color: #fff;
-			background-color: $delete;
 			transition: .5s;
+		}
+		button.btn-edit {
+		border-color: #9BBABF;
+		background-color: #9BBABF;
+			&:hover {
+				background-color: #719CA6;
+				border-color: #719CA6;
+			}
+		}
+		button.btn-delete {
+			border-color: $delete;
+			background-color: $delete;
 			&:hover {
 				background-color: #712E2A;
 				border-color: #712E2A;
@@ -173,11 +219,13 @@ body {
 			display: inline-block;
 			line-height: 20px;
 			font-size: 14px;
+			margin-left: 7px;
 		}
 	}
 }
 
 .card-placeholder {
-	border: 2px dotted $border;
+	border: 2px dotted $bg-color;
 	height: 40px;
+	margin: 0 10px;
 }
