@@ -42,18 +42,20 @@ Card.prototype = {
 	editCard: function() {
 		var self = this;
 		self.name = prompt('Edit your card:', self.name);
+		var parentColumn = $(this.$element).closest("div[data-idnum]").attr('data-idnum');
+		console.log(parentColumn);
 		$.ajax({
 			url: baseUrl + '/card/' + self.id,
 			method: 'PUT',
 			data: {
 				id: self.id,
 				name: self.name,
-				bootcamp_kanban_column_id: self.$element.parent().id
+				bootcamp_kanban_column_id: parseInt(parentColumn)
 			},
 			success: function(response) {
-				$cardDescription.text(self.name);
+				self.$element.children('.card-description').text(self.name);
 			}
-		});
+		});g
 
 	}
 };
